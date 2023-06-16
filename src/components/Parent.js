@@ -1,12 +1,25 @@
 import React, { useState } from "react";
 import Child from "./Child";
 
+let obj1 = {
+    name: 'Item1',
+    price: 10,
+}
+let obj2 = {
+    name: 'Item2',
+    price: 20,
+}
+let obj3 = {
+    name: 'Item3',
+    price: 30,
+}
+let arr = [obj1, obj2, obj3]
 const Parent = () => {
-    let [list, setList] = useState([]);
+    let [list, setList] = useState(arr);
     let [itemName, setItemName] = useState('');
-    let [itemPrice, setItemPrice] = useState('');
+    let [itemPrice, setItemPrice] = useState(0);
 
-
+   
     function addToList() {
         if (itemName && itemPrice) {
             let obj = {
@@ -33,10 +46,10 @@ const Parent = () => {
             <label>Item Name:</label>
             <input type="text" id="itemName" onChange={(e)=>{setItemName(e.target.value)}}/>
             <label>Item Price:</label>
-            <input type="text" id="itemPrice" onChange={(e)=>{ setItemPrice(e.target.value);}}/>
+            <input type="number" id="itemPrice" onChange={(e)=>{ setItemPrice(e.target.value);}}/>
             <button onClick={addToList}>Add Item</button>
 
-            <Child list={list} removeItem={(index)=>{remove(index)}} ></Child>
+            <Child list={list} removeItem={(index)=>{remove(index)}}  ></Child>
         </div>
     )
 }

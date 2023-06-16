@@ -8,10 +8,10 @@ const Child = ({list, removeItem})=>{
                 <ul>
                    { 
                         list.map((ele, ind)=>(
-                            <li>
-                                {ele.name} - ${ele.price} <button onClick={()=>{removeItem(ind)}}>Remove</button>
-                            </li>
-                        )
+                                <li>
+                                    {ele.name} - ${ele.price}<button onClick={()=>{removeItem(ind)}}>Remove</button>
+                                </li>
+                            )
                         )
                     }
                 </ul>
