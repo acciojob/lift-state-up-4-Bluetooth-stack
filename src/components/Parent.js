@@ -38,7 +38,7 @@ const Parent = () => {
 
             <div className="child">
                 <h3>Child Component</h3>
-                <ul>
+                {/* <ul> */}
                    { 
                         list.map((ele, ind)=>(
                             <li>
@@ -47,7 +47,7 @@ const Parent = () => {
                         )
                         )
                     }
-                </ul>
+                {/* </ul> */}
             </div>
         </div>
     )
