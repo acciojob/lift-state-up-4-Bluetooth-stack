@@ -36,19 +36,7 @@ const Parent = () => {
             <input type="text" id="itemPrice" onChange={(e)=>{ setItemPrice(e.target.value);}}/>
             <button onClick={addToList}>Add Item</button>
 
-            <div className="child">
-                <h3>Child Component</h3>
-                {/* <ul> */}
-                   { 
-                        list.map((ele, ind)=>(
-                            <li>
-                                <Child name={ele.name} price={ele.price} removeItem={(index)=>{remove(index)}} indx={ind} ></Child>
-                            </li>
-                        )
-                        )
-                    }
-                {/* </ul> */}
-            </div>
+            <Child list={list} removeItem={(index)=>{remove(index)}} ></Child>
         </div>
     )
 }
