@@ -38,14 +38,16 @@ const Parent = () => {
 
             <div className="child">
                 <h3>Child Component</h3>
-                {/* <ul> */}
+                <ul>
                    { 
                         list.map((ele, ind)=>(
-                            <Child name={ele.name} price={ele.price} removeItem={(index)=>{remove(index)}} indx={ind} ></Child>
+                            <li>
+                                <Child name={ele.name} price={ele.price} removeItem={(index)=>{remove(index)}} indx={ind} ></Child>
+                            </li>
                         )
                         )
                     }
-                {/* </ul> */}
+                </ul>
             </div>
         </div>
     )
